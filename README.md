@@ -54,6 +54,8 @@ In Next.js, components pre-render server-side where the global `window` and `loc
    git clone [https://github.com/nardirrr/Minimal-Markdown-Notes.git]
    cd Minimal-Markdown-Notes
 
-2. Run npm run dev
+2. Run:
+   ```bash
+   npm run dev
 
 3. Access the local host url for the browser
