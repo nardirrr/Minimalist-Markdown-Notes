@@ -17,14 +17,27 @@ export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   const loadDefaultNote = () => {
-    const initialNote: Note = {
-      id: Date.now().toString(),
-      title: 'Welcome Note',
+    const now = Date.now();
+
+    const welcomeNote: Note = {
+      id: (now - 1).toString(), // Offset ensures IDs never collide
+      title: 'Welcome Note / Instructions',
       content: '# Hello Markdown\n\nStart typing on the left hand side. Watch it render on the right hand side, using markdown formatting.\n\nZero backend database\n\nFully local, not cloud based\n\n **Markdown Syntax**\n\n ** Before and after will be bold\n\n "*" Before (with space) will be a list / bulletpoint\n\n "*" With no space, before and after is italic\n\n **Test Bold**\n\n *Test Italic*\n\n* Test List\n\n # Before text (with space) is a heading',
-      updatedAt: Date.now(),
+      updatedAt: now - 1,
     };
-    setNotes([initialNote]);
-    setActiveId(initialNote.id);
+
+    const initialBlankNote: Note = {
+      id: now.toString(),
+      title: 'Untitled Note',
+      content: '# New Note\n\nWrite your thoughts here...',
+      updatedAt: now,
+    };
+
+    // Puts the blank note at the top of the sidebar list, instructions below it
+    setNotes([initialBlankNote, welcomeNote]);
+
+    // Opens directly to the blank note
+    setActiveId(initialBlankNote.id);
   };
 
   // Load notes and theme preference on mount
