@@ -20,7 +20,7 @@ export default function Home() {
     const initialNote: Note = {
       id: Date.now().toString(),
       title: 'Welcome Note',
-      content: '# Hello Markdown\n\nStart typing on the left. Watch it render on the right.\n\nZero backend database\n\nFully local\n\n **Markdown Syntax**\n\n ** Before and after will be bold\n\n "*" Before (with space) will be a list / bulletpoint\n\n "*" With no space, before and after is italic\n\n **Test Bold**\n\n *Test Italic*\n\nTest List\n\n # Before text (with space) is a heading',
+      content: '# Hello Markdown\n\nStart typing on the left hand side. Watch it render on the right.\n\nZero backend database\n\nFully local\n\n **Markdown Syntax**\n\n ** Before and after will be bold\n\n "*" Before (with space) will be a list / bulletpoint\n\n "*" With no space, before and after is italic\n\n **Test Bold**\n\n *Test Italic*\n\nTest List\n\n # Before text (with space) is a heading',
       updatedAt: Date.now(),
     };
     setNotes([initialNote]);
